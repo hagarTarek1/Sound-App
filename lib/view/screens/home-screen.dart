@@ -26,7 +26,10 @@ class HomeScreen extends StatelessWidget {
            HomeCubit.get(context).openSound(index);},
               child: ListofSounds(sounds: HomeCubit.get(context).sounds[index],));
         }, separatorBuilder: (context,index){
-          return Divider(color: Colors.white,thickness: 2,);
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Divider(color: Colors.white,thickness: 2,),
+          );
         }, itemCount: HomeCubit.get(context).sounds.length),
       ));
     }, listener:(context,state){});
